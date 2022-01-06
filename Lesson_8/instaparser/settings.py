@@ -1,4 +1,4 @@
-# Scrapy settings for lmparser project
+# Scrapy settings for instaparser project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,27 +7,28 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'lmparser'
+BOT_NAME = 'instaparser'
 
-SPIDER_MODULES = ['lmparser.spiders']
-NEWSPIDER_MODULE = 'lmparser.spiders'
+SPIDER_MODULES = ['instaparser.spiders']
+NEWSPIDER_MODULE = 'instaparser.spiders'
 
 LOG_ENABLED = True
 LOG_LEVEL = 'DEBUG'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36'
+# USER_AGENT = 'Instagram 155.0.0.37.107'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 4
+CONCURRENT_REQUESTS = 5
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
 # See also autothrottle settings and docs
-DOWNLOAD_DELAY = 2
+DOWNLOAD_DELAY = 3
 # The download delay setting will honor only one of:
 #CONCURRENT_REQUESTS_PER_DOMAIN = 16
 #CONCURRENT_REQUESTS_PER_IP = 16
@@ -47,13 +48,13 @@ COOKIES_ENABLED = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'lmparser.middlewares.LmparserSpiderMiddleware': 543,
+#    'instaparser.middlewares.InstaparserSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'lmparser.middlewares.LmparserDownloaderMiddleware': 543,
+#    'instaparser.middlewares.InstaparserDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,8 +66,8 @@ COOKIES_ENABLED = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    'lmparser.pipelines.LmparserPipeline': 300,
-    'lmparser.pipelines.LmPicturesPipeline': 200,
+    'instaparser.pipelines.InstaparserPipeline': 300,
+    # 'instaparser.pipelines.InstaPhotosPipeline': 200,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -89,4 +90,4 @@ ITEM_PIPELINES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-IMAGES_STORE = 'pictures'
+PHOTOS_STORE = 'photos'
